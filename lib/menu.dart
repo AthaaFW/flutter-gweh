@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/interactivity.dart';
 import 'package:untitled/lat2.dart';
+import 'package:untitled/lat3.dart';
+
 
 class Menu extends StatefulWidget {
   const Menu({super.key});
@@ -43,6 +45,18 @@ class _MenuState extends State<Menu> {
                 );
               }, child: Text('Interact')),
             ),
+            SizedBox(height: 10),
+            SizedBox(
+              width: 100,
+              height: 50,
+              child: ElevatedButton(onPressed: (){
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) => const Landing(),
+                  ),
+                );
+              }, child: Text('Beli Gedung')),
+            ),//Spacer
           ],
         ),
       ),
