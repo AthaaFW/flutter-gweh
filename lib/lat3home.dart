@@ -1,5 +1,9 @@
+
+
 import 'package:flutter/material.dart';
 import 'package:untitled/lat3form.dart';
+
+import 'lat3.dart';
 
 class Home extends StatelessWidget {
   const Home({super.key});
@@ -11,13 +15,19 @@ class Home extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         ElevatedButton.icon(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const Landing(),
+              ),
+            );
+          },
           icon: Icon(
             Icons.home_filled,
             color: Color(0xFF003658),
           ),
           label: Text(
-            'Shop',
+            'Home',
             style: TextStyle(
                 color: Color(0xFF003658),
                 fontSize: 18,
@@ -31,7 +41,9 @@ class Home extends StatelessWidget {
             ),
           ),
         ),
-        SizedBox(width: 20,),
+        SizedBox(
+          width: 20,
+        ),
         CircleAvatar(
           radius: 20,
           backgroundColor: Colors.white,
@@ -49,19 +61,20 @@ class Home extends StatelessWidget {
     Widget buttonSection = Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        _ButtonRow('Hotel', '\$45'),
+        _ButtonRow('Hotel', '\$45', context),
         SizedBox(
           height: 20,
         ),
-        _ButtonRow('Hotel', '\$45'),
+        _ButtonRow('Hotel', '\$45', context),
+
         SizedBox(
           height: 20,
         ),
-        _ButtonRow('Hotel', '\$45'),
+        _ButtonRow('Hotel', '\$45', context),
         SizedBox(
           height: 20,
         ),
-        _ButtonRow('Hotel', '\$45'),
+        _ButtonRow('Hotel', '\$45', context),
       ],
     );
 
@@ -72,10 +85,16 @@ class Home extends StatelessWidget {
         backgroundColor: Color(0xFF003658),
         leading: IconButton(
           icon: Icon(
-            Icons.menu,
+            Icons.arrow_back_ios_new,
             color: Color(0xFFFC2940),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (context) => const Landing(),
+              ),
+            );
+          },
         ),
       ),
       body: Padding(
@@ -102,7 +121,7 @@ class Home extends StatelessWidget {
     );
   }
 
-  Container _ButtonRow(String label, String price) {
+  Container _ButtonRow(String label, String price, context) {
     return Container(
       child: Padding(
         padding: const EdgeInsets.all(18.0),
@@ -139,8 +158,7 @@ class Home extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context) => Lat3form()),
+                Navigator.push(context, MaterialPageRoute(builder: (context) => Lat3form())
                 );
               },
               child: Icon(

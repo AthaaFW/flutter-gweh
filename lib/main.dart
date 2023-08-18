@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/lat3.dart';
+import 'package:untitled/lat3form.dart';
 import 'package:untitled/lat3home.dart';
 import 'package:untitled/menu.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       title: 'Flutter layout demo',
-      home: Home(),
+      home: Landing(),
     );
   }
 }
