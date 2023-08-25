@@ -97,25 +97,32 @@ class Home extends StatelessWidget {
           },
         ),
       ),
-      body: Padding(
-        padding: const EdgeInsets.only(
-            left: 20.00, top: 10.00, right: 20.00, bottom: 10.00),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Where do you want to sleep?',
-              style: TextStyle(color: Colors.white, fontSize: 20),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            buttonSection,
-            SizedBox(
-              height: 20,
-            ),
-            footerSection
-          ],
+      body: Container(
+        padding: EdgeInsets.only(top: 20),
+        decoration: BoxDecoration(
+          image: DecorationImage(
+              image: AssetImage("assets/bg.jpg"), fit: BoxFit.cover),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(
+              left: 20.00, top: 10.00, right: 20.00, bottom: 10.00),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Where do you want to sleep?',
+                style: TextStyle(color: Colors.white, fontSize: 35, fontWeight: FontWeight.bold),
+              ),
+              SizedBox(
+                height: 40,
+              ),
+              buttonSection,
+              SizedBox(
+                height: 20,
+              ),
+              footerSection
+            ],
+          ),
         ),
       ),
     );
@@ -173,7 +180,7 @@ class Home extends StatelessWidget {
       ),
       decoration: BoxDecoration(
           border: Border.all(color: Colors.white),
-          color: Colors.transparent,
+          color: Color(0xFF003658),
           borderRadius: BorderRadius.circular(10.00)),
     );
   }
